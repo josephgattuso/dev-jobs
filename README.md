@@ -1,9 +1,45 @@
-<center>
+<div align='center'>
   <img src='public/logo.svg' width='36' height='36' />
   <h1>Dev Jobs</h1>
-</center>
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+  <p align="center">
+    This is a spectacular Next.js project.
+  </p>
+  <p align="center">
+  <a
+    href="https://github.com/josephgattuso/dev-jobs/blob/master/LICENSE"
+  >
+    <img
+      alt="MIT License"
+      src="https://img.shields.io/github/license/josephgattuso/dev-jobs"
+    />
+  </a>
+    <a
+    href="https://github.com/josephgattuso/dev-jobs/pulls"
+  >
+  <img
+    alt="Pull requests welcome"
+    src="https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat-square"
+  />
+  </a>
+  <a
+    href="https://github.com/josephgattuso/dev-jobs/commits/master"
+  >
+    <img
+      alt="GitHub last commit"
+      src="https://img.shields.io/github/last-commit/josephgattuso/dev-jobs?style=flat-square"
+    />
+  </a>
+  <a
+    target="_blank"
+    href="https://twitter.com/intent/follow?screen_name=joeetuso"
+  >
+    <img
+      alt="Twitter Follow"
+      src="https://img.shields.io/twitter/follow/joeetuso?style=flat-square"
+    />
+  </a>
+</p>
+</div>
 
 ## 🚀 Getting Started
 
