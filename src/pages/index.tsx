@@ -1,20 +1,23 @@
 import Head from 'next/head';
-import Button from '../components/Button';
+import { Button, JobView } from '../components';
+import { Job } from '../types';
 
-export default function Home() {
+export default function Home({ jobs }: { jobs: Job[] }) {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen py-2'>
+    <>
       <Head>
         <title>Dev Jobs</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1 className='text-6xl bg-green-100'>Hello world!</h1>
-      <p className='m-2'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore alias
-        ipsa labore ducimus expedita, maxime quas maiores sint debitis placeat
-        magnam et dolorem, impedit quam inventore enim ut quis perferendis!
-      </p>
-      <Button>Button 1</Button>
+      <h1 className='text-6xl text-center font-bold bg-blue-100 py-2'>
+        Dev Jobs
+      </h1>
+      <div className='px-6 pt-12 mb-5'>
+        {jobs.map((job: Job) => (
+          <JobView key={job.id} job={job} />
+        ))}
+      </div>
+      <Button>View More</Button>
       <footer className='flex items-center justify-center w-full h-24 border-t'>
         <a
           href='https://josephgattuso.github.io'
@@ -23,6 +26,14 @@ export default function Home() {
           Powered by <img className='h-4 ml-2' src='/logo.svg' alt='' />
         </a>
       </footer>
-    </div>
+    </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://jobs.github.com/positions.json?page=2&search=code`
+  );
+  const data = await res.json();
+  return { props: { jobs: data } };
 }
