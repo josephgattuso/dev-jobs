@@ -28,7 +28,7 @@ export default function Input({
       >
         {icon && (
           <div className='absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none'>
-            {React.cloneElement(icon, { className: 'text-violet' })}
+            {React.cloneElement(icon, { className: 'text-black' })}
           </div>
         )}
 
@@ -38,7 +38,7 @@ export default function Input({
           className={classNames(
             '',
             isCheckbox
-              ? 'form-checkbox bg-very-dark-blue bg-opacity-10 ml-5 h-6 w-6 text-violet transition duration-150 ease-in-out'
+              ? 'form-checkbox bg-very-dark-blue bg-opacity-10 ml-5 h-6 w-6 text-black transition duration-150 ease-in-out'
               : 'form-input block w-full h-full pl-16 leading-button sm:text-sm sm:leading-5'
           )}
           placeholder={placeholder}

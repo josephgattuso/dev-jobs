@@ -15,7 +15,7 @@ export default function Button({
       <button
         className={classNames(
           className,
-          'font-brand font-bold text-base leading-button h-12 w-35 bg-violet hover:bg-light-violet rounded-button',
+          'font-brand font-bold text-base leading-button h-12 w-35 bg-black hover:bg-white hover:text-black rounded-button',
           primary
             ? 'text-white'
             : 'text-violet bg-opacity-10 hover:bg-opacity-35'

@@ -61,7 +61,7 @@ export default function JobView({ job }: { job: Job }) {
           </p>
         </div>
         <div>
-          <p className='mt-10 text-sm font-bold font-brand text-violet'>
+          <p className='mt-10 text-sm font-bold font-brand text-black'>
             {job.location}
           </p>
         </div>
