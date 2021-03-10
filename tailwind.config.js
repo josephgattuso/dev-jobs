@@ -45,20 +45,15 @@ module.exports = {
       minHeight: {
         card: '14.25rem',
       },
-      minWidth: {
-        card: '20rem',
-      },
       spacing: {
-        12.5: '3.125rem',
-        35: '8rem',
-        'card-width': '20rem',
-        'card-height': '14rem',
+        35: '8.75rem',
+        76: '19rem',
       },
       borderRadius: {
-        button: '0.5rem',
+        button: '0.3125rem',
       },
       lineHeight: {
-        button: '1.2rem',
+        button: '1.18rem',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
