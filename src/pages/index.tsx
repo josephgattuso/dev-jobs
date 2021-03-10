@@ -12,12 +12,14 @@ export default function Home({ jobs }: { jobs: Job[] }) {
       <h1 className='text-6xl text-center font-bold bg-blue-100 py-2'>
         Dev Jobs
       </h1>
-      <div className='px-6 pt-12 mb-5'>
+      <div className='px-6 pt-20'>
         {jobs.map((job: Job) => (
           <JobView key={job.id} job={job} />
         ))}
       </div>
-      <Button>View More</Button>
+      <div className='text-center mt-8 mb-16'>
+        <Button primary={true}>View More</Button>
+      </div>
       <footer className='flex items-center justify-center w-full h-24 border-t'>
         <a
           href='https://josephgattuso.github.io'
