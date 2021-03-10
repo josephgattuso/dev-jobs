@@ -4,6 +4,8 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
   },
   purge: {
     content: [
@@ -21,19 +23,42 @@ module.exports = {
         'light-grey': '#F4F6F8',
         grey: '#9DAEC2',
         'dark-grey': '#6E8098',
+        logo: {
+          1: '#DF6DAE',
+          2: '#3DB3D1',
+          3: '#3D3B94',
+          4: '#F0B62A',
+          5: '#E66D39',
+          6: '#222121',
+          7: '#5964E0',
+          8: '#FB7E66',
+          9: '#007CFF',
+          10: '#492A29',
+          11: '#60DCAD',
+          12: '#FF585F',
+        },
       },
       opacity: {
         10: '0.1',
         35: '0.35',
       },
+      minHeight: {
+        card: '14.25rem',
+      },
+      minWidth: {
+        card: '20rem',
+      },
       spacing: {
-        35: '8.75rem',
+        12.5: '3.125rem',
+        35: '8rem',
+        'card-width': '20rem',
+        'card-height': '14rem',
       },
       borderRadius: {
-        button: '0.3125rem',
+        button: '0.5rem',
       },
       lineHeight: {
-        button: '1.18rem',
+        button: '1.2rem',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
