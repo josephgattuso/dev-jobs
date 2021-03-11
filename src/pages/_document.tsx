@@ -16,7 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <title>DevJobs</title>
           <link
             href='https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap'
             rel='stylesheet'

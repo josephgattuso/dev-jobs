@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
 import { Button, JobView, Input, JobViewSkeleton } from '../components';
 import { Job } from '../types';
+import Head from 'next/head';
 
 export default function Home() {
   const { isLoading, error, data } = useQuery('jobsData', () =>
@@ -22,6 +23,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Dev Jobs</title>
+      </Head>
       <div className='grid justify-center max-w-full grid-cols-1 px-6 mx-auto transform -translate-y-1/2 md:grid-cols-3'>
         <Input
           icon={
