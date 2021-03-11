@@ -41,7 +41,7 @@
 </p>
 </div>
 
-## 🚀 Getting Started
+## 🚀 Get Started
 
 First, run the development server:
 
