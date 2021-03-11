@@ -11,7 +11,7 @@ export default function JobView({ job }: { job: Job }) {
           <div
             className={classNames(
               'text-white font-brand font-bold absolute grid w-12 h-12 p-2 transform -translate-y-1/2 place-items-center rounded-2xl',
-              getRandomColor()
+              getRandomColor(job.company)
             )}
           >
             {job.company[0]}
