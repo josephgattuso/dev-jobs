@@ -12,8 +12,7 @@
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-query": "^3.12.1",
-    "react-query-devtools": "^2.6.3"
+    "react-query": "^2.23.1"
   },
   "devDependencies": {
     "@tailwindcss/ui": "^0.6.2",
