@@ -5,21 +5,24 @@ export default function Button({
   className = '',
   children,
   primary = false,
+  onClick = () => {},
 }: {
   className?: string;
   children: ReactNode;
   primary?: boolean;
+  onClick?: () => void;
 }) {
   return (
     <>
       <button
         className={classNames(
           className,
-          'font-brand font-bold text-base leading-button h-12 w-35 bg-black hover:bg-white hover:text-black rounded-button',
+          'font-brand font-bold text-base leading-button h-12 w-35 bg-violet hover:bg-light-violet rounded-button',
           primary
             ? 'text-white'
             : 'text-violet bg-opacity-10 hover:bg-opacity-35'
         )}
+        onClick={onClick}
       >
         {children}
       </button>
