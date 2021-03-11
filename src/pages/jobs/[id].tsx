@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { Job } from '../../types';
 import { formatDate, getRandomColor } from '../../utils';
-import { Button } from '../../components';
+import { Button, JobDetailsViewSkeleton } from '../../components';
 
 export default function DetailsPage({ job }: { job: Job }) {
   return (
@@ -59,6 +59,7 @@ export default function DetailsPage({ job }: { job: Job }) {
           </div>
         </div>
       </div>
+      {/* Job Details */}
       <div className='w-11/12 px-6 py-10 mx-auto overflow-hidden bg-white rounded-md dark:bg-very-dark-blue max-w-183'>
         <div className='flex flex-col md:items-center md:flex-row md:justify-between'>
           <div>
