@@ -1,4 +1,4 @@
-import { Button, JobView, Input } from '../components';
+import { Button, JobView, Input, JobViewSkeleton } from '../components';
 import { Job } from '../types';
 
 export default function Home({ jobs }: { jobs: Job[] }) {
@@ -74,6 +74,7 @@ export default function Home({ jobs }: { jobs: Job[] }) {
       </div>
 
       <div className='grid grid-cols-1 px-6 pt-4 gap-x-3 xl:gap-x-8 gap-y-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+        <JobViewSkeleton />
         {jobs.map((job: Job) => (
           <JobView key={job.id} job={job} />
         ))}
