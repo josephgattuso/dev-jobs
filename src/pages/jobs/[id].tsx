@@ -2,8 +2,23 @@ import classNames from 'classnames';
 import { Job } from '../../types';
 import { formatDate, getRandomColor } from '../../utils';
 import { Button, JobDetailsViewSkeleton } from '../../components';
+import { useQuery } from 'react-query';
+import { useRouter } from 'next/router';
 
-export default function DetailsPage({ job }: { job: Job }) {
+export default function DetailsPage() {
+  const router = useRouter();
+  const jobId = router.query.id;
+  const { isLoading, error, data } = useQuery(`job-${jobId}-data`, () =>
+    fetch(
+      `https://thingproxy.freeboard.io/fetch/https://jobs.github.com/positions/${jobId}.json`
+    ).then(res => res.json())
+  );
+
+  console.log(error);
+
+  if (isLoading) return <JobDetailsViewSkeleton />;
+  if (error) return 'An error has occurred.';
+  const job: Job = data;
   return (
     <>
       {/* Mobile Hero Section */}
@@ -33,7 +48,8 @@ export default function DetailsPage({ job }: { job: Job }) {
           </Button>
         </div>
       </div>
-      {/* Desktop Hero */}
+
+      {/* Desktop Hero Section */}
       <div className='hidden w-11/12 mx-auto overflow-hidden transform -translate-y-8 bg-white rounded-md md:flex min-h-35 max-w-183'>
         <div
           className={classNames(
@@ -59,7 +75,6 @@ export default function DetailsPage({ job }: { job: Job }) {
           </div>
         </div>
       </div>
-      {/* Job Details */}
       <div className='w-11/12 px-6 py-10 mx-auto overflow-hidden bg-white rounded-md dark:bg-very-dark-blue max-w-183'>
         <div className='flex flex-col md:items-center md:flex-row md:justify-between'>
           <div>
@@ -124,11 +139,8 @@ export default function DetailsPage({ job }: { job: Job }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  // console.log({ params });
-  const res = await fetch(
-    `https://jobs.github.com/positions/${params.id}.json`
-  );
-  const data = await res.json();
-  return { props: { job: data } };
-}
+// export async function getServerSideProps({ params }) {
+//   const res = await fetch(`https://jobs.github.com/positions/${params.id}.json`)
+//   const data = await res.json()
+//   return { props: { job: data } }
+// }
