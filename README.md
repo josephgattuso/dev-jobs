@@ -2,7 +2,7 @@
   <img src='public/logo.svg' width='36' height='36' />
   <h1>Dev Jobs</h1>
   <p align="center">
-    This is a <em>spectacular</em> Next.js project.
+    This is a spectacular Next.js project.
   </p>
   <p align="center">
   <a
@@ -41,7 +41,7 @@
 </p>
 </div>
 
-![cover](public/cover.webp)
+![cover](public/cover_light.webp)
 
 ## 📖 User stories
 
