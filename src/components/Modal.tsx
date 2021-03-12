@@ -1,12 +1,14 @@
 import { Transition } from '@headlessui/react';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 
 export default function Modal({
+  modalRef,
   className = '',
   children,
   isOpen,
   setIsOpen,
 }: {
+  modalRef: any;
   className?: string;
   children?: ReactNode;
   isOpen: boolean;
@@ -46,7 +48,7 @@ export default function Modal({
             aria-modal='true'
             aria-labelledby='modal-headline'
           >
-            {children}
+            <div ref={modalRef}>{children}</div>
           </Transition>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useMutation } from 'react-query';
 import { Button, JobView, Input, JobViewSkeleton, Modal } from '../components';
 import { Job } from '../types';
@@ -9,6 +9,8 @@ export default function Home() {
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [fullTime, setFullTime] = useState(false);
+
+  const modalRef = useRef();
 
   const [final, setFinal] = useState({
     finalDescription: '',
@@ -60,9 +62,29 @@ export default function Home() {
 
   if (error) return 'An error has occurred.';
 
+  useEffect(() => {
+    function handler(event: MouseEvent) {
+      if (
+        !event.defaultPrevented &&
+        !(modalRef.current as any)?.contains(event.target)
+      ) {
+        if (modalOpen) {
+          setModalOpen(false);
+        }
+      }
+    }
+    window.addEventListener('click', handler);
+    return () => window.removeEventListener('click', handler);
+  }, [modalOpen, modalRef]);
+
   return (
     <>
-      <Modal className='md:hidden' isOpen={modalOpen} setIsOpen={setModalOpen}>
+      <Modal
+        modalRef={modalRef}
+        className='md:hidden'
+        isOpen={modalOpen}
+        setIsOpen={setModalOpen}
+      >
         <Input
           icon={
             <svg width='17' height='24' xmlns='http://www.w3.org/2000/svg'>
@@ -80,7 +102,7 @@ export default function Home() {
           setValue={setLocation}
         />
         <Input
-          className='flex pl-1 md:hidden rounded-r-md'
+          className='flex pl-1 md:hidden'
           label='Full Time'
           isCheckbox={true}
           checkboxValue={fullTime}
@@ -92,7 +114,7 @@ export default function Home() {
             </p>
           </>
         </Input>
-        <div className='px-6 pb-6'>
+        <div className='px-6 pb-6 dark:bg-very-dark-blue'>
           <Button
             primary={true}
             className='w-full cursor-pointer'
@@ -154,7 +176,7 @@ export default function Home() {
               <svg width='20' height='20' xmlns='http://www.w3.org/2000/svg'>
                 <path
                   d='M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z'
-                  fill='#FFFFFF'
+                  fill='#fff'
                   fillRule='nonzero'
                 />
               </svg>
@@ -207,7 +229,6 @@ export default function Home() {
           </>
         </Input>
       </div>
-
       <div className='mb-6 -mt-6 space-x-2 text-center'>
         {final.finalDescription && (
           <span className='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-violet text-white'>
