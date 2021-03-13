@@ -10,7 +10,7 @@
     </a>
       </h1>
   <p align="center">
-    This is a spectacular Next.js project.
+    Building a jobs board app using the GitHub Jobs API.
   </p>
   <p align="center">
   <a
