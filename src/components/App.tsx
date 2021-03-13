@@ -160,8 +160,7 @@ export default function App({ children }: { children: ReactNode }) {
           </div>
           <div className='mt-2 md:mt-0 md:order-1'>
             <p className='text-base leading-6 prose text-center text-gray-400'>
-              &copy; 2021. Built by
-              <a href='https://josephgattuso.github.io'>Joseph Gattuso</a>.
+              &copy; {new Date().getFullYear()}. Built by Joseph Gattuso
             </p>
           </div>
         </div>
