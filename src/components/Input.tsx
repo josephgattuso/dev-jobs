@@ -31,7 +31,7 @@ export default function Input({
       </label>
       <div
         className={classNames(
-          'relative h-20 shadow-sm w-full max-w-76 md:max-w-full inline-flex items-center bg-white dark:bg-very-dark-blue',
+          'relative h-20 shadow-sm w-full max-w-md md:max-w-full inline-flex items-center bg-white dark:bg-very-dark-blue',
           className
         )}
       >
