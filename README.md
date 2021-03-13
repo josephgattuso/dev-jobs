@@ -1,6 +1,6 @@
 <div align='center'>
   <img src='public/logo.svg' width='36' height='36' />
-  <h1>Dev Jobs</h1>
+  <h1>DevJobs</h1>
   <p align="center">
     This is a spectacular Next.js project.
   </p>
@@ -49,7 +49,7 @@
 - [x] See hover states for all interactive elements throughout the site
 - [x] View all jobs currently live on the [GitHub Jobs API](https://jobs.github.com)
 - [x] Be able to click a job from the index page so that they can read more information and apply for the job
-- [ ] Have the correct color scheme chosen for them based on their computer preferences. See `prefers-color-scheme` in CSS.
+- [x] Have the correct color scheme chosen for them based on their computer preferences. See `prefers-color-scheme` in CSS.
 
 ## 🚀 Quick Start
 
