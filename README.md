@@ -2,7 +2,7 @@
   <img src='public/logo.svg' width='36' height='36' />
   <h1>
     <a
-      href="https://devjobs-api.vercel.app"
+      href="https://jobs.gattuso.dev"
       rel="_blank"
       rel="noopener noreferrer nofollow"
     >
