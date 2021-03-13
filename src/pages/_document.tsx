@@ -33,7 +33,7 @@ class MyDocument extends Document {
             property='og:description'
             content='A DevJobs app using GitHub Jobs API.'
           />
-          <meta property='og:url' content='https://dev-jobs-api.vercel.app' />
+          <meta property='og:url' content='https://devjobs-api.vercel.app' />
           <meta property='twitter:title' content='DevJobs' />
           <meta
             property='twitter:description'
@@ -41,15 +41,15 @@ class MyDocument extends Document {
           />
           <meta
             property='twitter:url'
-            content='https://dev-jobs-api.vercel.app'
+            content='https://devjobs-api.vercel.app'
           />
           <meta
             property='og:image'
-            content='https://dev-jobs-api.vercel.app/cover_light.png'
+            content='https://devjobs-api.vercel.app/cover_light.png'
           />
           <meta
             property='twitter:image'
-            content='https://dev-jobs-api.vercel.app/cover_light.png'
+            content='https://devjobs-api.vercel.app/cover_light.png'
           />
           <link rel='shortcut icon' href='/favicon.ico' />
           <link
