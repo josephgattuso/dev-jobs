@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useMutation } from 'react-query';
 import { Button, JobView, Input, JobViewSkeleton, Modal } from '../components';
 import { Job } from '../types';
+import Head from 'next/head';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -79,6 +80,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>DevJobs || Joseph Gattuso</title>
+      </Head>
       <Modal
         modalRef={modalRef}
         className='md:hidden'
